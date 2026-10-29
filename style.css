@@ -39,3 +39,269 @@
 .final-panel .button-row{flex:0 0 auto;margin-top:18px;margin-bottom:12px}
 .final-panel .restart-story{white-space:normal}
 @media(max-width:760px){.final-panel{padding:24px 18px 105px;gap:4px}.final-panel .hero-decor{position:absolute}.final-panel .hero-kicker{margin-top:4px}.final-panel .eyebrow{margin-bottom:8px}.final-panel .bodycopy{font-size:13px;line-height:1.65;margin-top:12px}.final-panel .signature{font-size:clamp(24px,7vw,34px);margin-top:16px}.final-panel .button-row{margin-top:14px}}
+
+
+/* Polished birthday finale — styles for the final cake frame */
+.birthday-finale {
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 3vh, 34px) clamp(18px, 4vw, 56px) 28px;
+  text-align: center;
+}
+.birthday-finale:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(255, 155, 202, .13), transparent 43%),
+    radial-gradient(ellipse at 50% 100%, rgba(243, 177, 151, .08), transparent 45%);
+}
+.birthday-finale .final-bg-words {
+  position: absolute;
+  z-index: -1;
+  left: clamp(16px, 3vw, 42px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(22px, 2.5vw, 38px);
+  letter-spacing: .13em;
+  line-height: 1.28;
+  text-align: left;
+  color: rgba(255, 191, 218, .075);
+  pointer-events: none;
+  user-select: none;
+}
+.birthday-finale .final-bg-words span { color: rgba(255, 159, 202, .12); }
+.birthday-finale .final-garden {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  height: 54px;
+  padding: 0 4px 5px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .78;
+}
+.birthday-finale .final-garden span {
+  display: inline-block;
+  font-size: clamp(15px, 1.7vw, 23px);
+  filter: drop-shadow(0 0 8px rgba(255, 153, 201, .25));
+  animation: finalTulipFloat 4.5s ease-in-out infinite;
+}
+.birthday-finale .final-garden span:nth-child(3n) { animation-delay: -1.2s; }
+.birthday-finale .final-garden span:nth-child(2n) { animation-delay: -2.4s; }
+.birthday-finale .final-cake-scene {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 0 18px;
+}
+.birthday-finale .eyebrow {
+  margin: 0 0 9px;
+  font-size: clamp(8px, .72vw, 10px);
+  letter-spacing: .22em;
+}
+.birthday-finale .final-cake-wrap {
+  width: clamp(150px, 21vh, 210px);
+  height: clamp(125px, 19vh, 185px);
+  position: relative;
+  display: grid;
+  place-items: end center;
+  margin: 0 auto 9px;
+  isolation: isolate;
+}
+.birthday-finale .final-cake-wrap:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 140%;
+  height: 130%;
+  left: -20%;
+  top: -15%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 158, 204, .17), rgba(255, 158, 204, .035) 45%, transparent 70%);
+}
+.birthday-finale .final-cake-sparkles {
+  position: absolute;
+  inset: 2px -35px auto;
+  color: #ffe1ee;
+  font-size: clamp(12px, 1.3vw, 17px);
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px rgba(255, 145, 195, .8);
+  animation: finalSparklePulse 2.6s ease-in-out infinite;
+}
+.birthday-finale .final-cake {
+  position: relative;
+  width: 76%;
+  height: 63%;
+  margin-bottom: 13px;
+  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, .28));
+  animation: finalCakeFloat 4.8s ease-in-out infinite;
+}
+.birthday-finale .final-cake-top {
+  position: absolute;
+  z-index: 3;
+  left: -2%;
+  right: -2%;
+  top: 0;
+  height: 26%;
+  border: 2px solid #ffe9f2;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 35% 24%, #fff8fc 0, #ffd5e7 42%, #f39bc2 78%, #d66b9b 100%);
+  box-shadow: inset 0 3px 6px rgba(255,255,255,.8), 0 3px 8px rgba(0,0,0,.12);
+}
+.birthday-finale .final-cake-side {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 13%;
+  bottom: 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  overflow: hidden;
+  border-radius: 5px 5px 15px 15px;
+  border-bottom: 6px solid #fff0f7;
+  background: linear-gradient(90deg, #b94f83 0%, #ec8fb8 17%, #ffd5e6 48%, #ef9ac0 76%, #b94f83 100%);
+  box-shadow: inset 0 -8px 12px rgba(119,30,75,.18), inset 0 6px 7px rgba(255,255,255,.45);
+}
+.birthday-finale .final-cake-side:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: radial-gradient(ellipse at center top, #fff8fc 0 7px, transparent 8px) 0 0 / 22px 15px repeat-x;
+}
+.birthday-finale .final-cake-side span {
+  position: relative;
+  z-index: 2;
+  color: #fff9fc;
+  font-family: var(--serif);
+  font-size: clamp(25px, 4.2vh, 38px);
+  line-height: 1;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(125, 35, 78, .55);
+}
+.birthday-finale .final-cake-side small {
+  position: relative;
+  z-index: 2;
+  color: #fff8fc;
+  font-size: clamp(6px, .68vw, 9px);
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-shadow: 0 1px 4px rgba(125, 35, 78, .55);
+}
+.birthday-finale .final-cake-plate {
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: 0;
+  height: 10%;
+  border: 2px solid rgba(255, 239, 247, .95);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff2f8, #e6b5ce);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.birthday-finale .final-candle {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 4%;
+  width: 9px;
+  height: 28%;
+  transform: translateX(-50%);
+  border-radius: 4px 4px 2px 2px;
+  background: repeating-linear-gradient(135deg, #fff9fc 0 6px, #f08ab7 6px 11px);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.35);
+}
+.birthday-finale .final-candle i {
+  position: absolute;
+  left: 50%;
+  top: -20px;
+  width: 17px;
+  height: 23px;
+  transform: translateX(-50%);
+  border-radius: 70% 30% 60% 40%;
+  background: radial-gradient(ellipse at 50% 70%, #fffbd1 0 19%, #ffd05b 42%, #ff8b61 70%, transparent 72%);
+  filter: drop-shadow(0 0 9px rgba(255, 192, 84, .9));
+  animation: finalFlameDance .85s ease-in-out infinite alternate;
+}
+.birthday-finale .final-birthday-title {
+  max-width: 100%;
+  margin: 0;
+  font-size: clamp(36px, 5.2vw, 70px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.birthday-finale .final-birthday-title em {
+  color: var(--pink);
+  text-shadow: 0 0 30px rgba(255, 130, 186, .12);
+}
+.birthday-finale .final-birthday-message {
+  max-width: 760px;
+  margin: 12px auto 0;
+  color: #ead6e2;
+  font-size: clamp(12px, 1.05vw, 14px);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+.birthday-finale .button-row { margin-top: 17px; }
+.birthday-finale .cta { min-width: 190px; }
+@keyframes finalTulipFloat {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-7px) rotate(5deg); }
+}
+@keyframes finalCakeFloat {
+  0%, 100% { transform: translateY(0) rotate(-.5deg); }
+  50% { transform: translateY(-5px) rotate(.5deg); }
+}
+@keyframes finalSparklePulse {
+  0%, 100% { opacity: .65; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+@keyframes finalFlameDance {
+  from { transform: translateX(-50%) rotate(-7deg) scale(.92); }
+  to { transform: translateX(-50%) rotate(7deg) scale(1.06); }
+}
+@media (max-height: 760px) {
+  .birthday-finale { padding-top: 12px; padding-bottom: 16px; }
+  .birthday-finale .final-cake-wrap { height: clamp(105px, 17vh, 145px); width: clamp(135px, 18vh, 175px); }
+  .birthday-finale .final-birthday-title { font-size: clamp(34px, 4.6vw, 60px); }
+  .birthday-finale .final-birthday-message { margin-top: 8px; line-height: 1.55; }
+  .birthday-finale .button-row { margin-top: 11px; }
+}
+@media (max-width: 760px) {
+  .birthday-finale { padding: 14px 16px 34px; }
+  .birthday-finale .final-bg-words { left: 12px; top: 18%; transform: none; font-size: 22px; }
+  .birthday-finale .final-garden { height: 35px; }
+  .birthday-finale .final-cake-scene { padding-bottom: 8px; }
+  .birthday-finale .final-cake-wrap { width: 145px; height: 118px; margin-bottom: 8px; }
+  .birthday-finale .final-cake { width: 74%; }
+  .birthday-finale .final-birthday-title { font-size: clamp(35px, 9vw, 52px); }
+  .birthday-finale .final-birthday-message { font-size: 12px; line-height: 1.55; margin-top: 9px; }
+  .birthday-finale .button-row { margin-top: 13px; }
+  .birthday-finale .cta { min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .birthday-finale .final-garden span,
+  .birthday-finale .final-cake,
+  .birthday-finale .final-cake-sparkles,
+  .birthday-finale .final-candle i { animation: none !important; }
+}
