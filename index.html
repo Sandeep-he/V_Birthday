@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1a0b18"><title>Oyee... Sun Na. ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scene" aria-hidden="true"><div class="moon"></div><div class="starfield" id="starfield"></div><div class="petalfield" id="petalfield"></div><div class="warm-glow glow-a"></div><div class="warm-glow glow-b"></div></div>
+<header class="topbar"><div class="wordmark">Oyee... Sun Na. <span>♡</span></div><div class="top-right"><div class="birthday-note">HAPPY BIRTHDAY, YOU ARE SO LOVED <span>✦</span></div><div class="counter" id="counter">01 / 00</div><button class="music-btn" id="musicToggle" type="button" aria-label="Turn music on or off"><span id="musicIcon">♫</span><span class="music-label" id="musicLabel">MUSIC OFF</span></button></div></header>
+<main id="stage" aria-live="polite"></main>
+<nav class="navigation" aria-label="Story navigation"><button id="back" class="nav-button back" type="button" aria-label="Previous frame">←</button><button id="next" class="nav-button next" type="button">NEXT <span>→</span></button></nav>
+<audio id="music" loop preload="metadata" src="media/birthday-song.mp3"></audio><div id="toast" role="status" aria-live="polite"></div>
+<script src="media-list.js"></script><script src="script.js"></script>
+</body></html>
